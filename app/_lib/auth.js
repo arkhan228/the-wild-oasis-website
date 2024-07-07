@@ -42,12 +42,10 @@ const authConfig = {
   },
   events: {
     signOut() {
-      console.log('clearing session');
-      cookies().set('__Secure-authjs.session-token', '', {
+      cookies().delete('__Secure-authjs.session-token', {
         maxAge: 0,
         path: '/',
       });
-      console.log('session cleared');
     },
   },
 };
