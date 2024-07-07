@@ -121,5 +121,5 @@ export async function signInAction() {
 export async function signOutAction() {
   await signOut({ redirectTo: '/' });
   Cookies.remove('authjs.session-token');
-  Cookies.remove('_Secure-authjs.session-token');
+  Cookies.remove('__Secure-authjs.session-token');
 }
