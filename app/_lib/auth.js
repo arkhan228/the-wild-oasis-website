@@ -41,11 +41,13 @@ const authConfig = {
     signIn: '/login',
   },
   events: {
-    signOut({ token, session }) {
-      cookies().set('next-auth.session-token', '', {
+    signOut() {
+      console.log('clearing session');
+      cookies().set('__Secure-authjs.session-token', '', {
         maxAge: 0,
         path: '/',
       });
+      console.log('session cleared');
     },
   },
 };
