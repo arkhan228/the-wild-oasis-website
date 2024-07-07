@@ -5,6 +5,7 @@ import { auth, signIn, signOut } from './auth';
 import { supabase } from './supabase';
 import { getBookings } from './data-service';
 import { redirect } from 'next/navigation';
+import Cookies from 'js-cookie';
 
 export async function updateGuest(formData) {
   const session = await auth();
@@ -119,5 +120,6 @@ export async function signInAction() {
 
 export async function signOutAction() {
   await signOut({ redirectTo: '/' });
-  revalidatePath('/account/profile');
+  Cookies.remove('authjs.session-token');
+  Cookies.remove('_Secure-authjs.session-token');
 }
