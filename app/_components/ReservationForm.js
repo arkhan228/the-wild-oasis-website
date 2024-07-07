@@ -22,7 +22,6 @@ function ReservationForm({ cabin, user }) {
   const endDate = setLocalHoursToUTCOffset(range.to);
   const numNights = differenceInDays(endDate, startDate);
   const cabinPrice = numNights * (regularPrice - discount);
-  console.log(numNights);
 
   const bookingData = {
     cabinId: id,

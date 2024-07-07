@@ -30,7 +30,6 @@ function DateSelector({ cabin, settings, bookedDates }) {
     new Date(displayRange.to).setHours(0, 0, 0),
     new Date(displayRange.from).setHours(0, 0, 0)
   );
-  console.log('Date Selector nights:', numNights);
   const cabinPrice = numNights * (regularPrice - discount);
 
   const { minBookingLength, maxBookingLength } = settings;

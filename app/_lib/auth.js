@@ -1,7 +1,6 @@
 import NextAuth from 'next-auth';
 import Google from 'next-auth/providers/google';
 import { createGuest, getGuest } from './data-service';
-import { cookies } from 'next/headers';
 
 const authConfig = {
   providers: [
@@ -39,14 +38,6 @@ const authConfig = {
   },
   pages: {
     signIn: '/login',
-  },
-  events: {
-    signOut() {
-      cookies().delete('__Secure-authjs.session-token', {
-        maxAge: 0,
-        path: '/',
-      });
-    },
   },
 };
 
